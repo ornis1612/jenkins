@@ -31,4 +31,3 @@ docker-compose up
 ## Results
 You will be able to see the pipeline running in the Jenkins dashboard.
 The result is a docker running with an output.
-
