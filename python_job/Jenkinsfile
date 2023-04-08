@@ -7,15 +7,13 @@ pipeline {
     }
     stages {
         stage('Build Docker image') {
-//             dockerImage = docker.build("${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG}", "-f python_job/Dockerfile .")
             steps {
-                sh 'docker build -t my-python-image:latest -f python_job/Dockerfile python_job/'
+                sh 'docker build -t ${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG} -f python_job/Dockerfile python_job/'
             }
         }
         stage('Run Docker container') {
-//             dockerContainer = dockerImage.run("-p --name ${CONTAINER_NAME} -d")
             steps {
-                sh 'docker run my-python-image:latest'
+                sh 'docker run ${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG}'
             }
         }
     }
