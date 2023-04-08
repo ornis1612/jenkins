@@ -7,7 +7,7 @@
 ```
 JENKINS_ADMIN_ID=admin # Username for authentication the jenkins
 JENKINS_ADMIN_PASSWORD=password # Password for authentication the jenkins
-USER_NAME=ubuntu # The user whcih you have logged in
+USER_NAME=ubuntu # The user which you have logged in of the linux vm
 ```
 
 3. Run the following command to start the Jenkins server:
