@@ -9,19 +9,9 @@ services:
       - .env
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - /home/ubuntu/jenkins_configuration:/var/jenkins_home
+      - /home/${USER_NAME}/jenkins_configuration:/var/jenkins_home
     build:
       context: jenkins
       dockerfile: Dockerfile
     privileged: true
     restart: always
-    user: root
-  agent:
-    image: jenkins/ssh-agent:jdk11
-    privileged: true
-    user: root
-    container_name: agent
-    expose:
-      - 22
-    environment:
-      - JENKINS_AGENT_SSH_PUBKEY=ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCyfrE4tD3vAnEl1a8wLeJ7xGmLQymlXNJBDXrN8Eu3qsy6mS9pcMHs9u8YOaeXrl8QoSqjXCXBinmOvzZpPhcHY7SDzO7GVC1IbhQMRFLvxDrYIShivJ/IrftLvWmRDvkmdCWMNB9f+BQ84m/nL8h33on1FNLF/s62A9AQ3zWG7vUIVzDxKrhu2hZ7sPHPbdXwiAuC5aJiWCRMIsCpC9eRS1tUkqKO4F/zj4RUV9EwpKCBBNoWLEbUXosr1ylvYoHxOPwtEm+8PEUloq9DwTtaIhtJQmav2n6LLJEVKzr0kw0vlv7HohUUmTYmTsx2R42IDehWXB9SKxJWbb0WXl2JfnCoFoAQEzfM3RlFDutc2PJ5HC7Biw2UeKTbniMP4czvTedq8bumJIYbSBKN5nMJlgpoZky85uBbL2o18Ry2vKxPjKR6Hr2OmUCkMHwn58oVcERPDcnBqq6fqAUAj7RTZLZCt+Hxbf7TGD8mB4f3WS9bj/j1QCPWU9vwypY6OHk= ubuntu@semperis-nat
