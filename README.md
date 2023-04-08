@@ -1,6 +1,6 @@
-# jenkins
+# Jenkins Project
 
-## PREREQUISITES
+## Prerequisites
 1. Connect to linux vm, which docker and docker-compose are installed.
 
 2. Create a .env file with the following environment variables:
@@ -29,4 +29,6 @@ docker-compose up
 
 
 ## Results
-You will be able to see the pipeline running in the Jenkins dashboard, and any changes to the Git repository will trigger a build of the pipeline.
+You will be able to see the pipeline running in the Jenkins dashboard.
+The result is a docker running with an output.
+
