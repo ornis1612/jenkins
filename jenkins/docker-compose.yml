@@ -7,11 +7,10 @@ services:
       - "50000:50000"
     env_file:
       - .env
-    environment:
-      DOCKER_HOST: "tcp://0.0.0.0:2375"
+#    environment:
+#      DOCKER_HOST: "tcp://docker:2376"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-#      - /home/ubuntu/jenkins_home:/var/jenkins_home
     build:
       context: .
       dockerfile: Dockerfile
