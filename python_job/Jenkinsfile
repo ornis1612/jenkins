@@ -1,23 +1,21 @@
 pipeline {
     agent any
     environment {
-        DOCKER_IMAGE_NAME = "my-docker-image"
+        DOCKER_IMAGE_NAME = "my-python-image"
         DOCKER_IMAGE_TAG = "latest"
-        CONTAINER_NAME = "my-container"
+        CONTAINER_NAME = "my-python-job"
     }
     stages {
         stage('Build Docker image') {
+//             dockerImage = docker.build("${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG}", "-f python_job/Dockerfile .")
             steps {
-                script {
-                    dockerImage = docker.build("${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG}", "-f Dockerfile .")
-                }
+                sh 'docker build -t my-python-image:latest -f python_job/Dockerfile python_job/'
             }
         }
         stage('Run Docker container') {
+//             dockerContainer = dockerImage.run("-p --name ${CONTAINER_NAME} -d")
             steps {
-                script {
-                    dockerContainer = dockerImage.run("-p --name ${CONTAINER_NAME} -d")
-                }
+                sh 'docker run my-python-image:latest'
             }
         }
     }

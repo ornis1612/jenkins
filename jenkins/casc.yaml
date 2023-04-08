@@ -12,11 +12,6 @@ jenkins:
       - "USER:Overall/Administer:admin"
       - "GROUP:Overall/Read:authenticated"
 
-  gitHubConfiguration:
-    apiRateLimitChecker: ThrottleForNormalize
-  gitHubPluginConfig:
-    hookUrl: "http://127.0.0.1:8080/github-webhook/"
-
 security:
   queueItemAuthenticator:
     authenticators:

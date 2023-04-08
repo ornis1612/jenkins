@@ -18,5 +18,5 @@ ssh-slaves:latest
 timestamper:latest
 workflow-aggregator:latest
 ws-cleanup:latest
-generic-webhook-trigger:latest
 authorize-project:latest
+docker-plugin:latest
